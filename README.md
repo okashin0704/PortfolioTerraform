@@ -11,6 +11,8 @@ Terraformを使用してAWS上にWebサーバー環境を構築しました。
 ---
 
 ## 構成図
+
+<img width="768" height="1343" alt="Image" src="https://github.com/user-attachments/assets/6c0a273a-fd71-4988-adee-1cadfc533439" />
 ---
 
 ## 使用サービス
