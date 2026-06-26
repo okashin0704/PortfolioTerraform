@@ -94,10 +94,12 @@ resource "aws_security_group" "alb_sg" {
 
 　egress {
    description = "Allow HTTP all outbound traffic
-   from_port = 80
-   to_port = 80
-   protcol = "HTTP"
+   from_port = 0
+   to_port = 0
+   protcol = "-1"
    cidr_blocks ["0.0.0.0/0"]
+  }
+
   tags = {
     Name = "alb-sg"
   }
@@ -140,7 +142,6 @@ resource "aws_instance" "web_1a" {
 
   user_data = <<EOF
 #!/bin/bash
-
 dnf update -y
 dnf install httpd -y
 systemctl enable httpd
@@ -163,7 +164,6 @@ resource "aws_instance" "web_1c" {
 
   user_data = <<EOF
 #!/bin/bash
-
 dnf update -y
 dnf install httpd -y
 systemctl enable httpd
